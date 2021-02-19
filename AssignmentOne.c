@@ -51,7 +51,7 @@ void calc_area_circle_main()
 
     printf("C A L C U L A T E   A R E A   O F   A   C I R C L E\n\n");
 
-        r = get_num_from_user("Please enter the radius of your circle:%3f");
+        r = get_num_from_user("Please enter the radius of your circle: ");
         area_circle = calc_area_circle(r);
         printf("\narea_circle: %f \n\n", area_circle);
 
