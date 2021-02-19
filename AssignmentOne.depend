@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1613724601 source:c:\users\jasonwheelhouse\documents\jasonw\tafe\assignmentone\assignmentone.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
