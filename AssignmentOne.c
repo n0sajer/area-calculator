@@ -55,7 +55,7 @@ void calc_area_circle_main()
         area_circle = calc_area_circle(r);
         printf("\narea_circle: %f \n\n", area_circle);
 
-        option = get_num_from_user("Press (1) to continue (2) to quit: ");
+        option = get_num_from_user("Press (1) to repeat (2) to quit: ");
 
     } while (option != 2);
 }
@@ -76,7 +76,7 @@ void calc_area_square_main()
         area_square = calc_area_square(s);
         printf("\narea_square: %f \n\n", area_square);
 
-        option = get_num_from_user("Press (1) to continue (2) to quit: ");
+        option = get_num_from_user("Press (1) to repeat (2) to quit: ");
 
     } while (option != 2);
 }
@@ -99,7 +99,7 @@ void calc_area_triangle_main()
         area_triangle = calc_area_triangle(b, h);
         printf("\narea_triangle: %f \n\n", area_triangle);
 
-        option = get_num_from_user("Press (1) to continue (2) to quit: ");
+        option = get_num_from_user("Press (1) to repeat (2) to quit: ");
 
     }
     while (option != 2);
