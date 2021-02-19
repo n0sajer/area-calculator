@@ -15,8 +15,7 @@ float get_num_from_user(char *message)
         printf("Invalid input... please enter a number: ");
         status = scanf("%f", &input);
     }
-    printf("Input variable is: %f\n", input);
-    system("pause");
+
     return input;
 }
 
@@ -105,8 +104,7 @@ int main()
                 break;
             case 0:
                 printf("Bye...\n");
-//            default:
-//            printf("idiot\n");
+                break;
         }
 
     } while (option != 0);
