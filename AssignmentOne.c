@@ -4,17 +4,19 @@
 
 float get_num_from_user(char *message)
 {
-    int input, temp, status;
+    int temp, status;
+    float input;
 
     printf("%s", message);
-    status = scanf("%d", &input);
+    status = scanf("%f", &input);
     while(status != 1)
     {
         while((temp = getchar()) != EOF && temp != '\n');
         printf("Invalid input... please enter a number: ");
-        status = scanf("%d", &input);
+        status = scanf("%f", &input);
     }
-
+    printf("Input variable is: %f\n", input);
+    system("pause");
     return input;
 }
 
