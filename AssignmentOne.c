@@ -62,19 +62,19 @@ void calc_area_circle_main()
 
 void calc_area_square_main()
 {
-    system("cls");
-
-    printf("C A L C U L A T E   A R E A   O F   A   S Q U A R E\n\n");
-
     int option = 0;
     float s;
     float area_square;
 
-    do {
+    do
+    {
+        system("cls");
+
+        printf("C A L C U L A T E   A R E A   O F   A   S Q U A R E\n\n");
 
         s = get_num_from_user("Enter side length of square: ");
         area_square = calc_area_square(s);
-        printf("\narea_square: %f \n\n", area_square);
+        printf("\narea_square: %f\n\n", area_square);
 
         option = get_num_from_user("Press (1) to repeat (2) to quit: ");
 
@@ -83,9 +83,6 @@ void calc_area_square_main()
 
 void calc_area_triangle_main()
 {
-    system("cls");
-
-    printf("C A L C U L A T E   A R E A   O F   A   T R I A N G L E\n\n");
 
     int option = 0;
     float b, h;
@@ -93,6 +90,9 @@ void calc_area_triangle_main()
 
     do
     {
+        system("cls");
+
+        printf("C A L C U L A T E   A R E A   O F   A   T R I A N G L E\n\n");
 
         b = get_num_from_user("Please enter base length of triangle: ");
         h = get_num_from_user("Please enter perpendicular height of triangle: ");
@@ -107,9 +107,6 @@ void calc_area_triangle_main()
 
 void calc_area_rect_main()
 {
-    system("cls");
-
-    printf("C A L C U L A T E   A R E A   O F   A   R E C T A N G L E\n\n");
 
     int option = 0;
     float x, y;
@@ -117,6 +114,9 @@ void calc_area_rect_main()
 
     do
     {
+        system("cls");
+
+        printf("C A L C U L A T E   A R E A   O F   A   R E C T A N G L E\n\n");
 
         x = get_num_from_user("Please enter length of rectangle: ");
         y = get_num_from_user("Please enter width of rectangle: ");
