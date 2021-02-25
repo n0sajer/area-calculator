@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-float get_num_from_user(char *message)
+float get_num_from_user(char *message) //Function that only returns true when a float is returned
 {
     int temp, status;
     float input;
@@ -19,7 +19,7 @@ float get_num_from_user(char *message)
     return input;
 }
 
-float calc_area_circle(float r)
+float calc_area_circle_radius(float r)
 {
     return M_PI * r * r;
 }
@@ -29,9 +29,12 @@ float calc_area_square(float s)
     return s * s;
 }
 
-float calc_area_triangle(float b, float h)
+float calc_area_triangle(float a, float b, float c)    //Heron's Formula for calculating triangle area
 {
-    return 0.5 * b * h;
+    float s;
+
+    s = (a + b + c) / 2;
+    return sqrt((s*((s-a) * (s-b) * (s-c))));
 }
 
 float calc_area_rect(float x, float y)
@@ -85,7 +88,7 @@ void calc_area_triangle_main()
 {
 
     int option = 0;
-    float b, h;
+    float a, b, c;
     float area_triangle;
 
     do
@@ -94,10 +97,11 @@ void calc_area_triangle_main()
 
         printf("C A L C U L A T E   A R E A   O F   A   T R I A N G L E\n\n");
 
-        b = get_num_from_user("Please enter base length of triangle: ");
-        h = get_num_from_user("Please enter perpendicular height of triangle: ");
-        area_triangle = calc_area_triangle(b, h);
-        printf("\narea_triangle: %f \n\n", area_triangle);
+        a = get_num_from_user("Please enter length of side 1: ");
+        b = get_num_from_user("Please enter length of side 2: ");
+        c = get_num_from_user("Please enter length of side 2: ");
+        area_triangle = calc_area_triangle(a, b, c);
+        printf("\nArea of the triangle triangle is : %f \n\n", area_triangle);
 
         option = get_num_from_user("Press (1) to repeat (2) to quit: ");
 
