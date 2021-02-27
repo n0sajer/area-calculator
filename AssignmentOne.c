@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include <math.h>
 
+// Looking to use a switch statement as a my data validator as there are only 3 options required!
+
 float get_num_from_user(char *message) //Function that only returns true when a float is returned
 {
     int temp, status;
     float input;
 
     printf("%s", message);
+//  exit(0);
     status = scanf("%f", &input);
     while(status != 1)
     {
@@ -22,6 +25,11 @@ float get_num_from_user(char *message) //Function that only returns true when a 
 float calc_area_circle_radius(float r)
 {
     return M_PI * r * r;
+}
+
+float calc_area_circle_diameter(float d)
+{
+    return M_PI * ((d * d) / 4);
 }
 
 float calc_area_square(float s)
@@ -42,25 +50,83 @@ float calc_area_rect(float x, float y)
     return x * y;
 }
 
-void calc_area_circle_main()
+void circle_radius_main()
 {
-
     int option = 0;
     float r;
-    float area_circle;
+    float area_using_radius;
 
     do {
-    system("cls");
 
-    printf("C A L C U L A T E   A R E A   O F   A   C I R C L E\n\n");
+        system("cls");
+        printf("\nC A L C U L A T E   A R E A   O F   T R I A N G L E:\n");
+        printf("           U S I N G   R A D I U S\n\n");
 
-        r = get_num_from_user("Please enter the radius of your circle: ");
-        area_circle = calc_area_circle(r);
-        printf("\narea_circle: %f \n\n", area_circle);
+        r = get_num_from_user("What is the radius of the circle: ");
+        area_using_radius = calc_area_circle_radius(r);
+        printf("Area of your circle (PI * r * r) = %f\n\n", area_using_radius);
 
-        option = get_num_from_user("Press (1) to repeat (2) to quit: ");
+        option = get_num_from_user("(2) to quit, any other number to repeat ");
 
     } while (option != 2);
+}
+
+void circle_diameter_main()
+{
+    int option = 0;
+    float d;
+    float area_using_diameter;
+
+    do
+    {
+        system("cls");
+        printf("\n\nC A L C U L A T E   A R E A   O F   T R I A N G L E:\n");
+        printf("          U S I N G   D I A M E T E R \n\n");
+
+        d = get_num_from_user("What is the diameter of the circle: ");
+        area_using_diameter = calc_area_circle_diameter(d);
+        printf("Area of your circle (PI * D/4) = %f\n\n", area_using_diameter);
+
+        option = get_num_from_user("(2) to quit, any other number to repeat ");
+
+    } while (option != 2);
+}
+
+void calc_area_circle_main()
+{
+    int option = 0;
+
+
+    system("cls");
+    printf("C A L C U L A T E   A R E A   O F   C I R C L E\n\n");
+    printf("1. Using radius\n");
+    printf("2. Using diameter\n");
+    printf("0. QUIT\n\n");
+
+    option = get_num_from_user("Choose an option from above: "); //TODO must add default to stop double repeat / exit
+    while (option != 0)
+    {
+        switch(option)
+        {
+            case 1:
+                circle_radius_main();
+                break;
+            case 2:
+                circle_diameter_main();
+                break;
+            case 0:
+                printf("Bye...\n");
+                break;
+        }
+
+        system("cls");
+        printf("C A L C U L A T E   A R E A   O F   C I R C L E\n\n");
+        printf("1. Using radius\n");
+        printf("2. Using diameter\n");
+        printf("0. QUIT\n\n");
+
+        option = get_num_from_user("\n\nChoose an option from above: ");
+    }
 }
 
 void calc_area_square_main()
@@ -79,7 +145,7 @@ void calc_area_square_main()
         area_square = calc_area_square(s);
         printf("\narea_square: %f\n\n", area_square);
 
-        option = get_num_from_user("Press (1) to repeat (2) to quit: ");
+        option = get_num_from_user("(2) to quit, any other number to repeat ");
 
     } while (option != 2);
 }
@@ -103,7 +169,7 @@ void calc_area_triangle_main()
         area_triangle = calc_area_triangle(a, b, c);
         printf("\nArea of the triangle triangle is : %f \n\n", area_triangle);
 
-        option = get_num_from_user("Press (1) to repeat (2) to quit: ");
+        option = get_num_from_user("(2) to quit, any other number to repeat ");
 
     }
     while (option != 2);
@@ -139,7 +205,6 @@ void calc_area_rect_main()
     }
     while (option != 2);
 }
-
 
 int main()
 {
